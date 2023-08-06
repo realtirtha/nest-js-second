@@ -1,4 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { CreateUserDto } from 'src/users/dtos/CreateUser.dto';
 
 @Controller('users')
 export class UsersController {
@@ -8,32 +9,16 @@ export class UsersController {
         return [{username: 'Tirtha', email: 'gmail@gmail.com'}]
     }
 
-    @Get('posts')
-    getUsersPosts(){
-        return [
-        {
-            username: 'Tirtha',
-            email: 'gmail@gmail.com',
-            posts: [{
-                id:1, 
-                title: 'Post 1',
-            },
-            {
-                id:2,
-                title:'Post 2',
-            },
-            ],
-        }]
+    @Post('create')
+    createUser(@Body() userData: CreateUserDto){
+        console.log(userData);
+        return {};
     }
 
-    @Get('posts/comments')
-    getUserPostComments(){
-        return[
-            {
-                id: 1,
-                title: 'Post 1',
-                comments: []
-            }
-        ]
+    @Get(':id/:postId')
+    getUserById(@Param('id') id: string, @Param('postId') postId: string){
+        console.log(id);
+        return{id, postId};
+
     }
 }
