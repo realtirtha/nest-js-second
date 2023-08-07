@@ -9,8 +9,8 @@ export class UsersController {
     }
 
     @Get()
-    getUsers(@Query('sortDesc', ParseBoolPipe) sortDesc: boolean){
-        return [{username: 'Tirtha', email: 'gmail@gmail.com'}]
+    getUsers(){
+        return this.userService.fetchUsers();
     }
     
 
@@ -18,7 +18,8 @@ export class UsersController {
     @UsePipes(new ValidationPipe)
     createUser(@Body() userData: CreateUserDto){
         console.log(userData);
-        return {};
+        return this.userService.createUser(userData);
+  
     }
 
     @Get(':id')
