@@ -15,6 +15,7 @@ export class UsersService {
     }
 
     createUser(userDetails: CreateUserType){
+        console.log('Received userData:', userDetails);
         this.fakeUsers.push(userDetails);
         return;
     }
