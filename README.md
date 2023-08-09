@@ -26,7 +26,7 @@ This project follows the tutorial from [NestJS Crash Course](https://www.youtube
 
 To run this project, you need to have Node.js installed on your machine. Then, follow these steps:
 
-1. Clone this repository: `git clone https://github.com/realtirtha/nest-js-first.git`
+1. Clone this repository: `git clone https://github.com/realtirtha/nest-js-second.git`
 2. Install the dependencies: `npm install`
 4. Start the development server: `npm run start:dev`
 5. Open your browser and visit `http://localhost:3000`
